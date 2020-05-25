@@ -1,0 +1,16 @@
+- block:
+  - name: Run apt-get update to get sync
+    apt:
+      update_cache: yes
+  - name: Upload keyboard configuration
+    copy:
+      src: roles/os/files/keyboard
+      dest: /etc/default/keyboard
+  - name: Reload keyboard configuration
+    shell: /usr/sbin/service keyboard-setup restart
+  - name: ...
+    shell: udevadm trigger --subsystem-match=input --action=change
+  - name : install gui
+    apt:
+      name: task-xfce-desktop
+  become: yes
