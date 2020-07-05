@@ -8,7 +8,6 @@
       dest: /etc/default/keyboard
   - name: Reload keyboard configuration
     shell: /usr/sbin/service keyboard-setup restart
-  - name: ...
     shell: udevadm trigger --subsystem-match=input --action=change
   - name : install gui
     apt:

@@ -1,0 +1,5 @@
+- block:
+  - name: Install adoptopenjdk-8-hotspot
+    apt:
+      name: adoptopenjdk-8-hotspot
+  become: yes
