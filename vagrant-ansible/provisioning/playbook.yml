@@ -3,5 +3,18 @@
     - os
     - java
     - ide
-
+    - role: Comcast.sdkman
+      sdkman_user: vagrant
+      sdkman_group: vagrant
+      sdkman_auto_answer: true
+      sdkman_update: true
+      sdkman_install_packages:
+        - { candidate: micronaut, version: 2.0.0 }
+      sdkman_flush_caches_before:
+        - temp
+      sdkman_flush_caches_after:
+        - archives
+        - broadcast
+        - candidates
+        - temp
 
