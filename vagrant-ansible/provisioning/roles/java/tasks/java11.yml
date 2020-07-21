@@ -1,0 +1,5 @@
+- block:
+  - name: Install adoptopenjdk-11-hotspot
+    apt:
+      name: adoptopenjdk-11-hotspot
+  become: yes

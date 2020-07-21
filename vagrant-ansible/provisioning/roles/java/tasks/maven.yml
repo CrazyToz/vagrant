@@ -1,0 +1,5 @@
+- block:
+  - name: Install maven
+    apt:
+      name: maven
+  become: yes

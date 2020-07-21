@@ -31,4 +31,6 @@
       update_cache: yes
   become: yes
 - import_tasks: java8.yml
+- import_tasks: java11.yml
 - import_tasks: java14.yml
+- import_tasks: maven.yml
