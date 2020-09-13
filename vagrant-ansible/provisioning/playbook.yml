@@ -3,6 +3,7 @@
     - os
     - java
     - ide
+    - scm
     - role: Comcast.sdkman
       sdkman_user: vagrant
       sdkman_group: vagrant

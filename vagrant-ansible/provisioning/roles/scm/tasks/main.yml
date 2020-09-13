@@ -1,0 +1,12 @@
+- block:
+  - name: install git
+    apt:
+      name: git
+  - name: copy gitconfig file
+    copy:
+      src: roles/scm/files/.gitconfig
+      dest: /home/vagrant/
+      owner: vagrant
+      group: vagrant
+      mode: '0755'
+  become: yes
