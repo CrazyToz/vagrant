@@ -9,9 +9,13 @@
 	rbi = rebase --interactive
 [core]
 	autocrlf = input
+	editor = vi
 [help]
 	autocorrect = 50
 [pull]
 	rebase = true
 [credential]
 	helper = store
+[user]
+	name = CrazyToz
+	
