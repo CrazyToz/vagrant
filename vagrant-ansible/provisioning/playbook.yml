@@ -5,6 +5,7 @@
     - ide
     - scm
     - node
+    - network
     - role: Comcast.sdkman
       sdkman_user: vagrant
       sdkman_group: vagrant
