@@ -4,8 +4,9 @@
     - java
     - ide
     - scm
-    - node
-    - network
+    - nodejs
+    - browsers
+    - tools
     - role: Comcast.sdkman
       sdkman_user: vagrant
       sdkman_group: vagrant

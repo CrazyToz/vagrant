@@ -1,0 +1,11 @@
+- block:
+  - name: Install Snap
+    apt:
+      name: snapd
+  - name: Enable Snap
+    shell:
+      cmd: snap install core
+  - name: Install XMind
+    shell:
+      cmd: snap install xmind
+  become: yes
