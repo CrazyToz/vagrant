@@ -1,0 +1,59 @@
+- block:
+  - name: Unistall old versions (docker)
+    apt:
+      name: docker
+      state: absent
+  - name : Unistall old versions (docker-engine)
+    apt: 
+      name: docker-engine
+      state: absent
+  - name : Unistall old versions (docker.io)
+    apt: 
+      name: docker.io
+      state: absent
+  - name : Unistall old versions (containerd)
+    apt:  
+      name: containerd
+      state: absent
+  - name : Unistall old versions (runc)
+    apt:
+      name: runc
+      state: absent
+  - name: Set-up repository (apt-transport-https)
+    apt:
+      name: apt-transport-https
+      update_cache: true
+  - name: Set-up repository (ca-certificates)
+    apt:
+      name: ca-certificates
+      update_cache: true
+  - name: Set-up repository (curl)
+    apt:
+      name: curl
+      update_cache: true
+  - name: Set-up repository (gnupg-agent)
+    apt:
+      name: gnupg-agent
+      update_cache: true
+  - name: Set-up repository (software-properties-common)
+    apt:
+      name: software-properties-common
+      update_cache: true
+  - name: Add Docker GPG key
+    shell: curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+  - name: Setu-up repository (final step)
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+  - name: Install Docker (docker-ce)
+    apt: 
+      name: docker-ce
+      update_cache: true
+  - name: Install Docker (docker-ce-cli)
+    apt: 
+      name: docker-ce-cli
+      update_cache: true
+  - name: Install Docker (containerd.io)
+    apt: 
+      name: containerd.io
+      update_cache: true
+  become: yes

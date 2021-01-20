@@ -7,6 +7,7 @@
     - nodejs
     - browsers
     - tools
+    - docker
     - role: Comcast.sdkman
       sdkman_user: vagrant
       sdkman_group: vagrant
