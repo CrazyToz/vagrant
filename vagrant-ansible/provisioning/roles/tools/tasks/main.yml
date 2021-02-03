@@ -8,4 +8,7 @@
   - name: Install XMind
     shell:
       cmd: snap install xmind
+  - name: Install Visual Studio Code
+    shell:
+      cmd: snap install --classic code
   become: yes
