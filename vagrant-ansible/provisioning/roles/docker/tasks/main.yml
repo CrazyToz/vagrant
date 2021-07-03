@@ -56,4 +56,13 @@
     apt: 
       name: containerd.io
       update_cache: true
+  - name: Create docker group
+    group:
+      name: docker
+      state: present
+  - name: Add the user vagrant to the docker group
+    user:
+      name: vagrant
+      groups: docker
+      append: yes
   become: yes

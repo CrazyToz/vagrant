@@ -1,0 +1,19 @@
+- block:
+  - name: Create install dir
+    file:
+      path: /opt/kube/minikube
+      state: directory
+      owner: vagrant
+      group: vagrant
+      mode: '0775'
+  - name: Download Minikube
+    get_url:
+      url: https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+      dest: /opt/kube/minikube/minikube_latest_amd64.deb
+      owner: vagrant
+      group: vagrant
+      mode: '0775'
+  - name: Install Minikube
+    apt:
+      deb: /opt/kube/minikube/minikube_latest_amd64.deb
+  become: yes
