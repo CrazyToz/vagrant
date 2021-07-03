@@ -16,4 +16,17 @@
   - name: Install Minikube
     apt:
       deb: /opt/kube/minikube/minikube_latest_amd64.deb
+  - name: Get Google Cloud public signing key for kubectl
+    get_url:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      dest: /usr/share/keyrings/kubernetes-archive-keyring.gpg
+      owner: vagrant
+      group: vagrant
+      mode: '0775'
+  - name: Add Kubernetes to repository
+    shell: echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+  - name: Install kubectl
+    apt:
+      update_cache: yes
+      name: kubectl
   become: yes
